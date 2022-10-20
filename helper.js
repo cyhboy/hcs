@@ -12,8 +12,8 @@ if (typeof window !== 'undefined') {
 
 chrome.storage.local.get(['domContent'], function (result) {
     console.log('Value currently is ' + result.domContent)
-    let newLocation = new URL('openss://C:/CHROME_SPACE/ytcheck/learn/' + result.domContent + '.xlsm')
-    // openss://C:/CHROME_SPACE/ytcheck/learn/窃客学院_安卓必学之MVCMVPMVVMNDK和JNcmake快速入门Android动画AndroidmustlearnMVCMVPMVVMNDKandJNcmakequickstartAndroidanimation.xlsm
+    let newLocation = new URL('openss://C:/CHROME_SPACE/hcs/learning/' + result.domContent + '.xlsm')
+    // openss://C:/CHROME_SPACE/hcs/learning/窃客学院_安卓必学之MVCMVPMVVMNDK和JNcmake快速入门Android动画AndroidmustlearnMVCMVPMVVMNDKandJNcmakequickstartAndroidanimation.xlsm
     window.location = newLocation
 
     setTimeout(() => {

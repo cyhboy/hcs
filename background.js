@@ -71,7 +71,7 @@ chrome.browserAction.onClicked.addListener(() => {
         if (res == 'ok') {
             const createOption = {
                 url: 'helper.html',
-                // url: 'openss://C:/CHROME_SPACE/ytcheck/learn/' + result.domContent + '.xlsm',
+                // url: 'openss://C:/CHROME_SPACE/hcs/learning/' + result.domContent + '.xlsm',
                 focused: false,
 
                 state: 'minimized',
@@ -87,7 +87,7 @@ chrome.browserAction.onClicked.addListener(() => {
         if (res == 'ng') {
             const createOption = {
                 url: 'cmder.html',
-                // url: 'openss://C:/CHROME_SPACE/ytcheck/learn/' + result.domContent + '.xlsm',
+                // url: 'openyt://',
                 focused: false,
 
                 state: 'minimized',
@@ -136,7 +136,7 @@ function doStuffWithDom(domContent) {
         console.log('Value is set to ' + domContent)
     })
 
-    let myFile = 'learn/' + domContent + '.xlsm'
+    let myFile = 'learning/' + domContent + '.xlsm'
 
     chrome.runtime.getPackageDirectoryEntry(function (storageRootEntry) {
         storageRootEntry.getFile(myFile, {
