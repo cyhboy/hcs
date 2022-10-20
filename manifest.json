@@ -1,0 +1,44 @@
+{
+    "manifest_version": 2,
+    "name": "hcs",
+    "version": "1.0",
+    "description": "history clean system",
+    "icons": {
+        "128": "umbrella-icon.png",
+        "48": "umbrella-icon.png",
+        "32": "umbrella-icon.png",
+        "16": "umbrella-icon.png"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage",
+        "webNavigation"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/playlist?list=*",
+                "https://www.youtube.com/channel/*/videos",
+                "https://www.youtube.com/c/*/videos",
+                "https://www.youtube.com/user/*/videos",
+                "https://www.youtube.com/channel/*/playlists",
+                "https://www.youtube.com/c/*/playlists",
+                "https://www.youtube.com/user/*/playlists"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "browser_action": {
+        "default_title": "hcs",
+        "default_icon": "umbrella-icon.png"
+    }
+}
