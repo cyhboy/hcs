@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "hcs",
     "version": "1.0",
-    "description": "history clean system",
+    "description": "for my youtube development version 2",
     "icons": {
         "128": "umbrella-icon.png",
         "48": "umbrella-icon.png",
@@ -12,8 +12,7 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "storage",
-        "webNavigation"
+        "storage"
     ],
     "background": {
         "scripts": [

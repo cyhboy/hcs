@@ -102,31 +102,6 @@ chrome.browserAction.onClicked.addListener(() => {
     })
 })
 
-// chrome.webNavigation.onCompleted.addListener(info => {
-//     // alert('This is my favorite website!')
-//     // console.log(info)
-
-//     // reBadge(info)
-
-//     if (info.url.startsWith('https://www.youtube.com/playlist?list=')) {
-//         console.log('get the youtube playlist linkage')
-//         // chrome.storage.local.set({ 'domUrl': info.url }, function () {
-//         //     console.log('Value is set to domUrl: ' + info.url)
-//         // })
-//         chrome.tabs.sendMessage(info.tabId, { text: 'report_back' }, doStuffWithDom)
-//     } else if ((info.url.startsWith('https://www.youtube.com/channel/') || info.url.startsWith('https://www.youtube.com/user/') || info.url.startsWith('https://www.youtube.com/c/')) && (info.url.endsWith('/videos') || info.url.endsWith('/playlists'))) {
-//         console.log('get the youtube playlists or videos linkage')
-//         // chrome.storage.local.set({ 'domUrl': info.url }, function () {
-//         //     console.log('Value is set to domUrl: ' + info.url)
-//         // })
-//         chrome.tabs.sendMessage(info.tabId, { text: 'report_back_playlists_videos', linkage: info.url }, doStuffWithDom)
-//     } else {
-//         chrome.browserAction.setBadgeText({ text: '' }, () => { })
-//         chrome.browserAction.setBadgeBackgroundColor({ color: [0, 0, 0, 0] }, () => { })
-//         chrome.browserAction.setTitle({ title: '' }, () => { })
-//     }
-
-// }, { url: [{ urlMatches: 'https://www.youtube.com/playlist\\?list=.*|https://www.youtube.com/channel/.*/videos|https://www.youtube.com/c/.*/videos|https://www.youtube.com/user/.*/videos|https://www.youtube.com/channel/.*/playlists|https://www.youtube.com/c/.*/playlists|https://www.youtube.com/user/.*/playlists' }] })
 
 
 function doStuffWithDom(domContent) {
@@ -189,45 +164,4 @@ function doStuffWithDom(domContent) {
 
 }
 
-
-// chrome.tabs.onActivated.addListener(info => {
-//     if (info.url.startsWith('https://www.youtube.com/playlist?list=')) {
-//         console.log('get the youtube playlist linkage')
-//         // chrome.storage.local.set({ 'domUrl': info.url }, function () {
-//         //     console.log('Value is set to domUrl: ' + info.url)
-//         // })
-//         chrome.tabs.sendMessage(info.tabId, { text: 'report_back' }, doStuffWithDom)
-//     } else if ((info.url.startsWith('https://www.youtube.com/channel/') || info.url.startsWith('https://www.youtube.com/user/') || info.url.startsWith('https://www.youtube.com/c/')) && (info.url.endsWith('/videos') || info.url.endsWith('/playlists'))) {
-//         console.log('get the youtube playlists or videos linkage')
-//         // chrome.storage.local.set({ 'domUrl': info.url }, function () {
-//         //     console.log('Value is set to domUrl: ' + info.url)
-//         // })
-//         chrome.tabs.sendMessage(info.tabId, { text: 'report_back_playlists_videos', linkage: info.url }, doStuffWithDom)
-//     } else {
-//         chrome.browserAction.setBadgeText({ text: '' }, () => { })
-//         chrome.browserAction.setBadgeBackgroundColor({ color: [0, 0, 0, 0] }, () => { })
-//         chrome.browserAction.setTitle({ title: '' }, () => { })
-//     }
-// })
-
-
-// function reBadge(info) {
-//     if (info.url.startsWith('https://www.youtube.com/playlist?list=')) {
-//         console.log('get the youtube playlist linkage')
-//         // chrome.storage.local.set({ 'domUrl': info.url }, function () {
-//         //     console.log('Value is set to domUrl: ' + info.url)
-//         // })
-//         chrome.tabs.sendMessage(info.tabId, { text: 'report_back' }, doStuffWithDom)
-//     } else if ((info.url.startsWith('https://www.youtube.com/channel/') || info.url.startsWith('https://www.youtube.com/user/') || info.url.startsWith('https://www.youtube.com/c/')) && (info.url.endsWith('/videos') || info.url.endsWith('/playlists'))) {
-//         console.log('get the youtube playlists or videos linkage')
-//         // chrome.storage.local.set({ 'domUrl': info.url }, function () {
-//         //     console.log('Value is set to domUrl: ' + info.url)
-//         // })
-//         chrome.tabs.sendMessage(info.tabId, { text: 'report_back_playlists_videos', linkage: info.url }, doStuffWithDom)
-//     } else {
-//         chrome.browserAction.setBadgeText({ text: '' }, () => { })
-//         chrome.browserAction.setBadgeBackgroundColor({ color: [0, 0, 0, 0] }, () => { })
-//         chrome.browserAction.setTitle({ title: '' }, () => { })
-//     }
-// }
 
