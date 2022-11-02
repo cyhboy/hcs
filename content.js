@@ -19,24 +19,19 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         let title = ''
 
 
-        if (document.readyState !== 'complete') {
+        if (document.readyState == 'complete') {
+
             try {
-                if (author == '') {
-                    author = document.querySelector('#text > a').text
-                }
-                title = document.querySelector('#title > yt-formatted-string > a').text
+                // author = document.querySelector('#text > a').text
+                author = document.querySelector('#owner-text > a').text
+                console.log('first get author: ', author)
+
+                // title = document.querySelector('#title > yt-formatted-string > a').text
+                title = document.querySelector('#container > yt-formatted-string').textContent
+                console.log('first get title: ', title)
             } catch (error) {
                 console.error(error)
                 author = ''
-                sleep(1000)
-            }
-
-            try {
-                if (title == '') {
-                    title = document.querySelector('#title > yt-formatted-string > a').text
-                }
-            } catch (error) {
-                console.error(error)
                 title = ''
                 sleep(1000)
             }
@@ -45,14 +40,16 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
         if (author == '') {
             author = document.querySelector('#text-container > yt-formatted-string').textContent
+            console.log('second get author: ', author)
         }
 
         if (title == '') {
             title = document.querySelector('#title > yt-formatted-string > a').text
+            console.log('second get title: ', title)
         }
 
-        author = author.replace(/[/\\?\-👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
-        title = title.replace(/[/\\?\-👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
+        author = author.replace(/[/\\?\-👶🎵👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
+        title = title.replace(/[/\\?\-👶🎵👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
 
         // author = author.replace(/[^\w\s]/gi, '')
         // title = title.replace(/[^\w\s]/gi, '')
