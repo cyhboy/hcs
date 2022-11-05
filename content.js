@@ -48,8 +48,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             console.log('second get title: ', title)
         }
 
-        author = author.replace(/[/\\?\-👶🎵👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
-        title = title.replace(/[/\\?\-👶🎵👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
+        author = author.replace(/[/\\?\-👶🎵👨‍💻 ，, +()【】（）.%*：:|"<>]/g, '')
+        title = title.replace(/[/\\?\-👶🎵👨‍💻 ，, +()【】（）.%*：:|"<>]/g, '')
 
         // author = author.replace(/[^\w\s]/gi, '')
         // title = title.replace(/[^\w\s]/gi, '')
@@ -87,7 +87,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
         title = msg.linkage
 
-        author = author.replace(/[/\\?\-👨‍💻 ，, +()（）.%*：:|"<>]/g, '')
+        author = author.replace(/[/\\?\-👶🎵👨‍💻 ，, +()【】（）.%*：:|"<>]/g, '')
         // author = author.replace(/[^\w\s]/gi, '')
 
         let loc = title.lastIndexOf('/')
