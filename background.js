@@ -18,7 +18,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, info, tab) {
                 console.log('onUpdated value is set to domUrl: ' + tab.url)
             })
             chrome.tabs.sendMessage(tab.id, { text: 'report_back' }, doStuffWithDom)
-        } else if ((tab.url.startsWith('https://www.youtube.com/channel/') || tab.url.startsWith('https://www.youtube.com/user/') || tab.url.startsWith('https://www.youtube.com/c/')) && (tab.url.endsWith('/videos') || tab.url.endsWith('/playlists'))) {
+        } else if ((tab.url.startsWith('https://www.youtube.com/channel/') || tab.url.startsWith('https://www.youtube.com/user/') || tab.url.startsWith('https://www.youtube.com/c/') || tab.url.startsWith('https://www.youtube.com/@')) && (tab.url.endsWith('/videos') || tab.url.endsWith('/playlists'))) {
             console.log('get the youtube playlists or videos linkage')
             chrome.storage.local.set({ 'domUrl': tab.url }, function () {
                 console.log('onUpdated value is set to domUrl: ' + tab.url)
@@ -47,7 +47,7 @@ chrome.tabs.onActivated.addListener(info => {
                     console.log('onActivated value is set to domUrl: ' + tab.url)
                 })
                 chrome.tabs.sendMessage(tab.id, { text: 'report_back' }, doStuffWithDom)
-            } else if ((tab.url.startsWith('https://www.youtube.com/channel/') || tab.url.startsWith('https://www.youtube.com/user/') || tab.url.startsWith('https://www.youtube.com/c/')) && (tab.url.endsWith('/videos') || tab.url.endsWith('/playlists'))) {
+            } else if ((tab.url.startsWith('https://www.youtube.com/channel/') || tab.url.startsWith('https://www.youtube.com/user/') || tab.url.startsWith('https://www.youtube.com/c/') || tab.url.startsWith('https://www.youtube.com/@')) && (tab.url.endsWith('/videos') || tab.url.endsWith('/playlists'))) {
                 chrome.storage.local.set({ 'domUrl': tab.url }, function () {
                     console.log('onActivated value is set to domUrl: ' + tab.url)
                 })
