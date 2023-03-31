@@ -9,7 +9,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, info, tab) {
     //     // can't use localStorage
     // }
 
-    if (info.status == undefined && tab.status == 'complete') {
+    if (info.status !== undefined && tab.status == 'complete') {
         console.log('inside: ', tabId, info.status, tab.status, tab.url)
 
         if (tab.url.startsWith('https://www.youtube.com/playlist?list=')) {
