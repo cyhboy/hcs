@@ -14,8 +14,9 @@ chrome.storage.local.get(['domUrl'], function (result) {
     console.log('Value of domUrl currently is ' + result.domUrl)
     let newLocation = new URL('openyt://' + result.domUrl)
     
-    window.location = newLocation
+    console.log(newLocation)
 
+    window.location = newLocation
     setTimeout(() => {
         window.close()
     }, 1000)
