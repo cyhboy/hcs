@@ -18,9 +18,10 @@ chrome.storage.local.get(['domContent','domUrl'], function (result) {
     console.log(newLocation)
 
     window.location = newLocation
+
     setTimeout(() => {
         window.close()
-    }, 1000)
+    }, 10000)
 })
 
 

@@ -1,45 +1,59 @@
 {
-    "manifest_version": 2,
-    "name": "hcs",
-    "version": "1.0",
-    "description": "for my youtube development version 2",
-    "icons": {
-        "128": "umbrella-icon.png",
-        "48": "umbrella-icon.png",
-        "32": "umbrella-icon.png",
-        "16": "umbrella-icon.png"
-    },
-    "permissions": [
-        "activeTab",
-        "tabs",
-        "storage"
-    ],
-    "background": {
-        "scripts": [
-            "background.js"
-        ]
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.youtube.com/playlist?list=*",
-                "https://www.youtube.com/channel/*/videos",
-                "https://www.youtube.com/c/*/videos",
-                "https://www.youtube.com/user/*/videos",
-                "https://www.youtube.com/@*/videos",
-                "https://www.youtube.com/channel/*/playlists",
-                "https://www.youtube.com/c/*/playlists",
-                "https://www.youtube.com/user/*/playlists",
-                "https://www.youtube.com/@*/playlists"
-            ],
-            "js": [
-                "content.js"
-            ],
-            "run_at": "document_idle"
-        }
-    ],
-    "browser_action": {
-        "default_title": "hcs",
-        "default_icon": "umbrella-icon.png"
+  "manifest_version": 2,
+  "name": "hcs",
+  "version": "1.0",
+  "description": "for my youtube development version 2",
+  "icons": {
+    "128": "umbrella-icon.png",
+    "48": "umbrella-icon.png",
+    "32": "umbrella-icon.png",
+    "16": "umbrella-icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "webNavigation"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/playlist?list=*",
+        "https://www.youtube.com/channel/*/videos",
+        "https://www.youtube.com/c/*/videos",
+        "https://www.youtube.com/user/*/videos",
+        "https://www.youtube.com/@*/videos",
+        "https://www.youtube.com/*/videos",
+        "https://www.youtube.com/@*/videos?sttick=0",
+        "https://www.youtube.com/channel/*/playlists",
+        "https://www.youtube.com/c/*/playlists",
+        "https://www.youtube.com/user/*/playlists",
+        "https://www.youtube.com/@*/playlists",
+        "https://www.douyin.com/user/*",
+        "https://www.douyin.com/video/*",
+        "https://www.tiktok.com/@*",
+        "https://www.bilibili.com/video/*/*",
+        "https://space.bilibili.com/*/video?*",
+        "https://space.bilibili.com/*/video",
+        "https://space.bilibili.com/*/channel/collectiondetail?sid=*",
+        "https://space.bilibili.com/*/channel/seriesdetail?sid=*",
+        "https://space.bilibili.com/*/channel/series"
+      ],
+      "js": [
+        "jquery-3.7.1.min.js",
+        "content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
     }
+  ],
+  "browser_action": {
+    "default_title": "hcs",
+    "default_icon": "umbrella-icon.png"
+  }
 }

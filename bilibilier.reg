@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\openbl]
+@="URL:opendy Protocol"
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\openbl\DefaultIcon]
+@="cmd.exe,1"
+[HKEY_CLASSES_ROOT\openbl\shell]
+[HKEY_CLASSES_ROOT\openbl\shell\open]
+[HKEY_CLASSES_ROOT\openbl\shell\open\command]
+@="C:\\AppFiles\\ipy\\PlayListBL\\PlayListBL.exe %1"
